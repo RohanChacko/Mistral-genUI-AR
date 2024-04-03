@@ -5,8 +5,8 @@ using UnityEngine.Networking;
 
 public class LLavaUnityBridge : MonoBehaviour
 {
-    private string pythonServerURL = "https://ba9c1b2c7283.ngrok.app/upload-image/"; //"http://192.168.1.181:5000/nextTick"; // Replace with your Python server URL
-    private string webRequestRefreshURL = "https://3764cb5e7025.ngrok.app/render-default/";
+    private string pythonServerURL = "http://10.0.0.80:8000/upload-image/"; //"http://192.168.1.181:5000/nextTick"; // Replace with your Python server URL
+    private string webRequestRefreshURL = "http://10.0.0.80:3000/render-default/";
     //private string bunServerURL = "http://localhost:8000/getResponse"; // Replace with your Bun server URL
     private string responseID = ""; // This will store the ID returned from the Python server
 
@@ -85,7 +85,7 @@ public class LLavaUnityBridge : MonoBehaviour
                 // see in editor
                 Response = caption;
                 // Optionally, start getting response automatically
-                yield return new WaitForSeconds(40);
+                yield return new WaitForSeconds(20);
                 WebViewManager.UpdateLink(webRequestRefreshURL);
                 //GetResponseConnector();
             }

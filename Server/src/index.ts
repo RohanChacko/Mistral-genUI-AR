@@ -12,13 +12,11 @@ import dedent from "dedent";
 
 const interfaces: string[] = [];
 
-// const client = new MistralClient("TWfVrlX659GSTS9hcsgUcPZ8uNzfoQsg");
-const client = new MistralClient("oUvVgAnZYJGEsRbmu6dGVqFlJ0oJ8sSk");
+const client = new MistralClient("MISTRAL-KEY");
 
 const anthropic = new Anthropic({
   apiKey:
-    // "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",
-    "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",
+    "ANTHROPIC-KEY",
 });
 
 type Box = {
@@ -574,9 +572,9 @@ const handleSceneGeneration = async (
     "seconds"
   );
 
-  if (!lastId) {
-    lastId = id;
-  }
+  //if (!lastId) {
+  lastId = id;
+  //}
 
   await $`open http://localhost:3000/render/${id}`;
 };
